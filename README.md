@@ -1,11 +1,11 @@
-# Logic Processor
+# Indigo Ruler
 
-[![Build Status](https://img.shields.io/travis/indigophp/logicprocessor/develop.svg?style=flat-square)](https://travis-ci.org/indigophp/logicprocessor)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/indigophp/logicprocessor.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/logicprocessor)
-[![Packagist Version](https://img.shields.io/packagist/v/indigophp/logicprocessor.svg?style=flat-square)](https://packagist.org/packages/indigophp/logicprocessor)
-[![HHVM Status](https://img.shields.io/hhvm/indigophp/logicprocessor.svg?style=flat-square)](http://hhvm.h4cc.de/package/indigo/logicprocessor)
-[![Total Downloads](https://img.shields.io/packagist/dt/indigophp/logicprocessor.svg?style=flat-square)](https://packagist.org/packages/indigophp/logicprocessor)
-[![Quality Score](https://img.shields.io/scrutinizer/g/indigophp/logicprocessor.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/logicprocessor)
+[![Build Status](https://img.shields.io/travis/indigophp/ruler/develop.svg?style=flat-square)](https://travis-ci.org/indigophp/ruler)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/indigophp/ruler.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/ruler)
+[![Packagist Version](https://img.shields.io/packagist/v/indigophp/ruler.svg?style=flat-square)](https://packagist.org/packages/indigophp/ruler)
+[![HHVM Status](https://img.shields.io/hhvm/indigophp/ruler.svg?style=flat-square)](http://hhvm.h4cc.de/package/indigo/ruler)
+[![Total Downloads](https://img.shields.io/packagist/dt/indigophp/ruler.svg?style=flat-square)](https://packagist.org/packages/indigophp/ruler)
+[![Quality Score](https://img.shields.io/scrutinizer/g/indigophp/ruler.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/ruler)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 **Library to process logical rules and apply outcomes based on the result of those rules.**
@@ -18,7 +18,7 @@ Via Composer
 ``` json
 {
     "require": {
-        "indigophp/cart": "@stable"
+        "indigophp/ruler": "@stable"
     }
 }
 ```
@@ -49,7 +49,7 @@ A `Result` should modify data within the `Target`. They work in much the same wa
 
 [Processor Flow](resources/processor_flow.svg)
 
-[Sample code](https://github.com/ve-interactive/logicprocessor/wiki/Sample-test-code)
+[Sample code](https://github.com/ve-interactive/ruler/wiki/Sample-test-code)
 
 
 ### Why is this all so complicated
@@ -65,7 +65,7 @@ the various libraries so the `Builder` can create the needed classes for you.
 
 The format of the array is represented in the JSON object below.
 
-https://github.com/ve-interactive/logicprocessor/wiki/JSON-data-structure
+https://github.com/ve-interactive/ruler/wiki/JSON-data-structure
 
 
 ### Manager
@@ -91,17 +91,17 @@ attempt to construct it as a new object, passing nothing to the constructor.
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/indigophp/logicprocessor/blob/develop/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/indigophp/ruler/blob/develop/CONTRIBUTING.md) for details.
 
 
 ## Credits
 
 - [Márk Sági-Kazár](https://github.com/sagikazarmark)
-- [All Contributors](https://github.com/indigophp/logicprocessor/contributors)
+- [All Contributors](https://github.com/indigophp/ruler/contributors)
 
-Created by [Steve West](https://github.com/stevewest), originally licensed by [Ve Interactive](http://www.veinteractive.com/) under the MIT License.
+Based on the work of [Steve West](https://github.com/stevewest), originally licensed by [Ve Interactive](http://www.veinteractive.com/) under the MIT License.
 
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/indigophp/logicprocessor/blob/develop/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/indigophp/ruler/blob/develop/LICENSE) for more information.

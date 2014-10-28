@@ -1,5 +1,5 @@
 {
-    "name": "indigophp/logicprocessor",
+    "name": "indigophp/ruler",
     "description": "Library for being able to define logical rules and conditional outcomes",
     "license": "MIT",
     "keywords": ["rules", "processing"],
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Indigo\\LogicProcessor\\": "src/"
+            "Indigo\\Ruler\\": "src/"
         }
     },
     "config": {
