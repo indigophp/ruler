@@ -1,14 +1,30 @@
 # Logic Processor
 
-[![Build Status](https://travis-ci.org/ve-interactive/logicprocessor.svg?branch=master)](https://travis-ci.org/ve-interactive/logicprocessor)
-[![Code Coverage](https://scrutinizer-ci.com/g/ve-interactive/logicprocessor/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/ve-interactive/logicprocessor/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ve-interactive/logicprocessor/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ve-interactive/logicprocessor/?branch=master)
-[![HHVM Status](http://hhvm.h4cc.de/badge/ve-interactive/logicprocessor.svg)](http://hhvm.h4cc.de/package/ve-interactive/logicprocessor)
-[![Latest Stable Version](https://poser.pugx.org/ve-interactive/logicprocessor/v/stable.svg)](https://packagist.org/packages/ve-interactive/logicprocessor)
+[![Build Status](https://img.shields.io/travis/indigophp/logicprocessor/develop.svg?style=flat-square)](https://travis-ci.org/indigophp/logicprocessor)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/indigophp/logicprocessor.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/logicprocessor)
+[![Packagist Version](https://img.shields.io/packagist/v/indigophp/logicprocessor.svg?style=flat-square)](https://packagist.org/packages/indigophp/logicprocessor)
+[![HHVM Status](https://img.shields.io/hhvm/indigophp/logicprocessor.svg?style=flat-square)](http://hhvm.h4cc.de/package/indigo/logicprocessor)
+[![Total Downloads](https://img.shields.io/packagist/dt/indigophp/logicprocessor.svg?style=flat-square)](https://packagist.org/packages/indigophp/logicprocessor)
+[![Quality Score](https://img.shields.io/scrutinizer/g/indigophp/logicprocessor.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/logicprocessor)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-Library to process logical rules and apply outcomes based on the result of those rules.
+**Library to process logical rules and apply outcomes based on the result of those rules.**
 
-## How it all works
+
+## Install
+
+Via Composer
+
+``` json
+{
+    "require": {
+        "indigophp/cart": "@stable"
+    }
+}
+```
+
+
+## Usage
 
 The package consists of `Rule`s, `Assertion`s, `Results`s, `Modifier`s, `RuleSet`s and a `Processor`.
 
@@ -35,21 +51,24 @@ A `Result` should modify data within the `Target`. They work in much the same wa
 
 [Sample code](https://github.com/ve-interactive/logicprocessor/wiki/Sample-test-code)
 
+
 ### Why is this all so complicated
 
 While this whole process might seem complicated it allows for great flexibility when it comes to creating user-buildable
 rules. The `Rule`s and `Result`s allow a user to pinpoint a single piece of data and define how to examine and modify it.
 
-## Builder
+
+### Builder
 
 The `Builder` class can be used to create sets of rules quickly from an array structure. This first requires setting up
-the various libraries so the `Builder` can create the needed classes for you. 
+the various libraries so the `Builder` can create the needed classes for you.
 
 The format of the array is represented in the JSON object below.
 
 https://github.com/ve-interactive/logicprocessor/wiki/JSON-data-structure
 
-## Manager
+
+### Manager
 
 The `Manager` class can be used to keep track of multiple sets of the libraries that `Builder` requires. Used in conjunction
 with a DIC solution this can provide you with an easy way to manage multiple rule "environments".
@@ -68,3 +87,21 @@ If the thing passed is callable then it is expected to return an instance of `Li
 
 Finally if the above conditions are not met then the value is treated as a string class name and the `Manager` will
 attempt to construct it as a new object, passing nothing to the constructor.
+
+
+## Contributing
+
+Please see [CONTRIBUTING](https://github.com/indigophp/logicprocessor/blob/develop/CONTRIBUTING.md) for details.
+
+
+## Credits
+
+- [Márk Sági-Kazár](https://github.com/sagikazarmark)
+- [All Contributors](https://github.com/indigophp/logicprocessor/contributors)
+
+Created by [Steve West](https://github.com/stevewest), originally licensed by [Ve Interactive](http://www.veinteractive.com/) under the MIT License.
+
+
+## License
+
+The MIT License (MIT). Please see [License File](https://github.com/indigophp/logicprocessor/blob/develop/LICENSE) for more information.

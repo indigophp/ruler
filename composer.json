@@ -1,21 +1,30 @@
 {
-    "name": "ve-interactive/logicprocessor",
+    "name": "indigophp/logicprocessor",
     "description": "Library for being able to define logical rules and conditional outcomes",
     "license": "MIT",
+    "keywords": ["rules", "processing"],
+    "homepage": "https://indigophp.com",
     "authors": [
         {
-            "name": "Ve Labs, Team Kraken",
-            "email": "steve.west@veinteractive.com"
+            "name": "Márk Sági-Kazár",
+            "email": "mark.sagikazar@gmail.com"
         }
     ],
-	"require": {
-		"php": ">=5.4"
-	},
-	"require-dev": {
-		"codeception/codeception": "~2.0",
-		"codeception/mockery-module": "dev-master"
-	},
-	"autoload": {
-		"psr-4": { "Ve\\LogicProcessor\\": "src/" }
-	}
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0",
+        "henrikbjorn/phpspec-code-coverage" : "1.0.*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Indigo\\LogicProcessor\\": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }
