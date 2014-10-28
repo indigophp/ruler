@@ -9,24 +9,21 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler\Assertion;
-
-use Indigo\Ruler\Assertion;
+namespace Indigo\Ruler;
 
 /**
- * Asserts that a value is equal to another
+ * Asserts value based comparisons
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class Equal implements Assertion
+interface Assertion
 {
-    use \Indigo\Ruler\TargetValue;
-
     /**
-     * {@inheritdoc}
+     * Asserts that the input value and the target has a valid connection
+     *
+     * @param mixed $value
+     *
+     * @return boolean
      */
-    function assert($value)
-    {
-        return $this->getTargetValue() == $value;
-    }
+    public function assert($value);
 }

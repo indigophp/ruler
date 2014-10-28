@@ -14,11 +14,11 @@ namespace Indigo\Ruler\Assertion;
 use Indigo\Ruler\Assertion;
 
 /**
- * Asserts that a value is equal to another
+ * Asserts that a value is the same as another
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class Equal implements Assertion
+final class Same implements Assertion
 {
     use \Indigo\Ruler\TargetValue;
 
@@ -27,6 +27,6 @@ final class Equal implements Assertion
      */
     function assert($value)
     {
-        return $this->getTargetValue() == $value;
+        return $this->getTargetValue() === $value;
     }
 }

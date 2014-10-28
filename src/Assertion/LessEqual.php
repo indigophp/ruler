@@ -1,26 +1,32 @@
 <?php
-/**
- * Ve Labs, Team Kraken
- * @license MIT
- * @copyright 2014 Ve Interactive Ltd.
- * @link http://veinteractive.com
+
+/*
+ * This file is part of the Indigo Ruler package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
-namespace Ve\LogicProcessor\Assertion;
+namespace Indigo\Ruler\Assertion;
 
-use Ve\LogicProcessor\AbstractAssertion;
+use Indigo\Ruler\Assertion;
 
-class LessEqual extends AbstractAssertion
+/**
+ * Asserts that a value is less than or equal to another
+ *
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ */
+final class LessEqual implements Assertion
 {
+    use \Indigo\Ruler\TargetValue;
 
-	/**
-	 * @param mixed $value
-	 *
-	 * @return bool
-	 */
-	function run($value)
-	{
-		return $value <= $this->getTargetValue();
-	}
-
+    /**
+     * {@inheritdoc}
+     */
+    function assert($value)
+    {
+        return $this->getTargetValue() <= $value;
+    }
 }

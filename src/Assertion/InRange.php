@@ -1,34 +1,36 @@
 <?php
-/**
- * Ve Labs, Team Kraken
- * @license MIT
- * @copyright 2014 Ve Interactive Ltd.
- * @link http://veinteractive.com
+
+/*
+ * This file is part of the Indigo Ruler package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
-namespace Ve\LogicProcessor\Assertion;
+namespace Indigo\Ruler\Assertion;
 
-use Ve\LogicProcessor\AbstractAssertion;
+use Indigo\Ruler\Assertion;
 
 /**
- * Checks if the value is in the range defined by the target value.
+ * Asserts that a value is within a range defined by the target value.
  * The target value should be an array with two elements, the start of the range and the end of the range.
  * These should be values compatible with range().
  *
- * @package Ve\LogicProcessor\Assertion
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class InRange extends AbstractAssertion
+final class InRange implements Assertion
 {
+    use \Indigo\Ruler\TargetValue;
 
-	/**
-	 * @param mixed $value
-	 *
-	 * @return bool
-	 */
-	function run($value)
-	{
-		$range = range($this->getTargetValue()[0], $this->getTargetValue()[1]);
-		return in_array($value, $range);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    function assert($value)
+    {
+        $range = range($this->getTargetValue()[0], $this->getTargetValue()[1]);
 
+        return in_array($value, $range);
+    }
 }

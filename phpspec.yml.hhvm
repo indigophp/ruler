@@ -1,0 +1,5 @@
+suites:
+  ruler_suite:
+    namespace: Indigo\Ruler
+    psr4_prefix: Indigo\Ruler
+formatter.name: pretty
