@@ -22,6 +22,11 @@
             "Indigo\\Ruler\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Indigo\\Ruler\\Stub\\": "stub/"
+        }
+    },
     "config": {
         "bin-dir": "bin"
     },
