@@ -14,7 +14,7 @@ class GreaterEqualSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->shouldHaveType('Indigo\Ruler\Assertion\GreaterEqual');
-        $this->shouldHaveType('Indigo\Ruler\Assertion');
+        $this->shouldImplement('Indigo\Ruler\Assertion');
     }
 
     function it_should_be_greater()

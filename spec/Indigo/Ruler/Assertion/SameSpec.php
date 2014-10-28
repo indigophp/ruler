@@ -15,7 +15,7 @@ class SameSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->shouldHaveType('Indigo\Ruler\Assertion\Same');
-        $this->shouldHaveType('Indigo\Ruler\Assertion');
+        $this->shouldImplement('Indigo\Ruler\Assertion');
     }
 
     function it_should_be_the_same(stdClass $targetValue)
