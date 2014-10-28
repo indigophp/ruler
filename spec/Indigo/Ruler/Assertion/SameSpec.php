@@ -18,12 +18,12 @@ class SameSpec extends ObjectBehavior
         $this->shouldImplement('Indigo\Ruler\Assertion');
     }
 
-    function it_should_be_the_same(stdClass $targetValue)
+    function it_should_allow_to_be_the_same(stdClass $targetValue)
     {
         $this->assert($targetValue)->shouldReturn(true);
     }
 
-    function it_should_not_be_the_same(stdClass $target)
+    function it_should_allow_not_to_be_the_same(stdClass $target)
     {
         $this->assert($target)->shouldReturn(false);
     }

@@ -17,17 +17,17 @@ class LessSpec extends ObjectBehavior
         $this->shouldImplement('Indigo\Ruler\Assertion');
     }
 
-    function it_should_be_less()
+    function it_should_allow_to_be_less()
     {
         $this->assert(2)->shouldReturn(true);
     }
 
-    function it_should_not_be_less()
+    function it_should_not_allow_to_be_greater()
     {
         $this->assert(0)->shouldReturn(false);
     }
 
-    function it_should_be_less_but_different_type()
+    function it_should_allow_to_be_less_but_different_type()
     {
         $this->assert(2.0)->shouldReturn(true);
     }
