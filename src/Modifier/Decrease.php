@@ -1,26 +1,32 @@
 <?php
-/**
- * Ve Labs, Team Kraken
- * @license MIT
- * @copyright 2014 Ve Interactive Ltd.
- * @link http://veinteractive.com
+
+/*
+ * This file is part of the Indigo Ruler package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
-namespace Ve\LogicProcessor\Modifier;
+namespace Indigo\Ruler\Modifier;
 
-use Ve\LogicProcessor\AbstractModifier;
+use Indigo\Ruler\Modifier;
 
-class Decrease extends AbstractModifier
+/**
+ * Decreases a value
+ *
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ */
+final class Decrease implements Modifier
 {
+    use \Indigo\Ruler\TargetValue;
 
-	/**
-	 * @param int $value
-	 *
-	 * @return int
-	 */
-	function run($value)
-	{
-		return $value - $this->getTargetValue();
-	}
-
+    /**
+     * {@inheritdoc}
+     */
+    function modify($value)
+    {
+        return $value - $this->getTargetValue();
+    }
 }

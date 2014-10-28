@@ -9,24 +9,21 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler\Modifier;
-
-use Indigo\Ruler\Modifier;
+namespace Indigo\Ruler;
 
 /**
- * Increases a value
+ * Modifies a value
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class Increase implements Modifier
+interface Modifier
 {
-    use \Indigo\Ruler\TargetValue;
-
     /**
-     * {@inheritdoc}
+     * Modifies a value
+     *
+     * @param mixed $value
+     *
+     * @return mixed
      */
-    function modify($value)
-    {
-        return $value + $this->getTargetValue();
-    }
+    public function modify($value);
 }

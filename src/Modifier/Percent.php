@@ -1,33 +1,34 @@
 <?php
-/**
- * Ve Labs, Team Kraken
- * @license MIT
- * @copyright 2014 Ve Interactive Ltd.
- * @link http://veinteractive.com
- */
 
-namespace Ve\LogicProcessor\Modifier;
-
-use Ve\LogicProcessor\AbstractModifier;
-
-/**
- * Returns the percentage of the percentage of the $value in run()
+/*
+ * This file is part of the Indigo Ruler package.
  *
- * @package Ve\LogicProcessor\Modifier
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-class Percent extends AbstractModifier
+
+namespace Indigo\Ruler\Modifier;
+
+use Indigo\Ruler\Modifier;
+
+/**
+ * Returns the percentage of a value
+ *
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ */
+final class Percent implements Modifier
 {
+    use \Indigo\Ruler\TargetValue;
 
-	/**
-	 * @param mixed $value
-	 *
-	 * @return double
-	 */
-	function run($value)
-	{
-		$percentage = $this->getTargetValue();
+    /**
+     * {@inheritdoc}
+     */
+    function modify($value)
+    {
+        $percentage = $this->getTargetValue();
 
-		return $value - (($percentage / 100) * $value);
-	}
-
+        return ($percentage / 100) * $value;
+    }
 }

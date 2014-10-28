@@ -1,31 +1,32 @@
 <?php
-/**
- * Ve Labs, Team Kraken
- * @license MIT
- * @copyright 2014 Ve Interactive Ltd.
- * @link http://veinteractive.com
+
+/*
+ * This file is part of the Indigo Ruler package.
+ *
+ * (c) Indigo Development Team
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
-namespace Ve\LogicProcessor\Modifier;
+namespace Indigo\Ruler\Modifier;
 
-use Ve\LogicProcessor\AbstractModifier;
+use Indigo\Ruler\Modifier;
 
 /**
  * Returns a fixed value
  *
- * @package Ve\LogicProcessor\Modifier
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Fixed extends AbstractModifier
+final class Fixed implements Modifier
 {
+    use \Indigo\Ruler\TargetValue;
 
-	/**
-	 * @param mixed $value
-	 *
-	 * @return mixed
-	 */
-	function run($value)
-	{
-		return $this->getTargetValue();
-	}
-
+    /**
+     * {@inheritdoc}
+     */
+    function modify($value)
+    {
+        return $this->getTargetValue();
+    }
 }
