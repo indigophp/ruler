@@ -9,19 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler;
+namespace Indigo\Ruler\Stub;
 
 /**
- * Common logic for classes that mutate entities in various ways
+ * ModifierAware Stub
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-interface Result
+class ModifierAware
 {
-    /**
-     * Applies a Result to the Target
-     *
-     * @param mixed $target
-     */
-    public function mutate(&$target);
+    use \Indigo\Ruler\ModifierAware;
 }

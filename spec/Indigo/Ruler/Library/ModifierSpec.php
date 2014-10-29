@@ -3,7 +3,6 @@
 namespace spec\Indigo\Ruler\Library;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ModifierSpec extends ObjectBehavior
 {

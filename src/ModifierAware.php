@@ -12,34 +12,34 @@
 namespace Indigo\Ruler;
 
 /**
- * Defines an AssertionAware helper
+ * Defines an ModifierAware helper
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-trait AssertionAware
+trait ModifierAware
 {
     /**
-     * @var Assertion
+     * @var Modifier
      */
-    protected $assertion;
+    protected $modifier;
 
     /**
-     * Returns the Assertion
+     * Returns the Modifier
      *
-     * @return Assertion
+     * @return Modifier
      */
-    public function getAssertion()
+    public function getModifier()
     {
-        return $this->assertion;
+        return $this->modifier;
     }
 
     /**
-     * Sets the Assertion
+     * Sets the Modifier
      *
-     * @param Assertion $assertion
+     * @param Modifier $modifier
      */
-    public function setAssertion(Assertion $assertion)
+    public function setModifier(Modifier $modifier)
     {
-        $this->assertion = $assertion;
+        $this->modifier = $modifier;
     }
 }

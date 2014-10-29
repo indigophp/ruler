@@ -3,7 +3,6 @@
 namespace spec\Indigo\Ruler\Assertion;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class InRangeSpec extends ObjectBehavior
 {
