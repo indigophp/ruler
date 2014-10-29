@@ -16,7 +16,7 @@ use Indigo\Ruler\Rule\Logical;
 /**
  * Responsible for constructing sets of rules from formatted arrays
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 class Builder
 {

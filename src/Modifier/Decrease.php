@@ -16,7 +16,7 @@ use Indigo\Ruler\Modifier;
 /**
  * Decreases a value
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 final class Decrease implements Modifier
 {

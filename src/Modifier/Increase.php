@@ -16,7 +16,7 @@ use Indigo\Ruler\Modifier;
 /**
  * Increases a value
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 final class Increase implements Modifier
 {

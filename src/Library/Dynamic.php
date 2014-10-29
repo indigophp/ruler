@@ -16,7 +16,7 @@ use RuntimeException;
 /**
  * Dynamically looks for a class in a namespace
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 abstract class Dynamic extends Base
 {

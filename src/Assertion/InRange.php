@@ -18,7 +18,7 @@ use Indigo\Ruler\Assertion;
  * The target value should be an array with two elements, the start of the range and the end of the range.
  * These should be values compatible with range().
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 final class InRange implements Assertion
 {

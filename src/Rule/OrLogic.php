@@ -14,7 +14,7 @@ namespace Indigo\Ruler\Rule;
 /**
  * OR logical comparison rule
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 class OrLogic extends Logical
 {

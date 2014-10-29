@@ -16,7 +16,7 @@ use Indigo\Ruler\Modifier;
 /**
  * Returns a fixed value
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 final class Fixed implements Modifier
 {

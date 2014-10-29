@@ -16,7 +16,7 @@ use Indigo\Ruler\Modifier;
 /**
  * Returns the percentage of a value
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 final class Percent implements Modifier
 {

@@ -14,7 +14,7 @@ namespace Indigo\Ruler\Library;
 /**
  * Library for Modifiers
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 class Modifier extends Dynamic
 {

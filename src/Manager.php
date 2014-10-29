@@ -19,7 +19,7 @@ use ReflectionClass;
  * Keeps track of different rule "environments"
  * to be able to quickly and easily construct matching libraries and builders
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 class Manager
 {

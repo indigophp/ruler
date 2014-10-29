@@ -16,7 +16,7 @@ use Indigo\Ruler\Rule;
 /**
  * Common logic for logical comparison rules
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 abstract class Logical implements Rule
 {

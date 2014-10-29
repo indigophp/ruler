@@ -16,7 +16,7 @@ use Indigo\Ruler\Assertion;
 /**
  * Asserts that a value is equal to another
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 final class Equal implements Assertion
 {

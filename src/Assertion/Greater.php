@@ -16,7 +16,7 @@ use Indigo\Ruler\Assertion;
 /**
  * Asserts that a value is greater than another
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 final class Greater implements Assertion
 {

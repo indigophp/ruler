@@ -14,7 +14,7 @@ namespace Indigo\Ruler;
 /**
  * Combination of a Rule and one or more Results
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 class RuleSet
 {

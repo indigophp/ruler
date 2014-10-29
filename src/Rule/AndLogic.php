@@ -14,7 +14,7 @@ namespace Indigo\Ruler\Rule;
 /**
  * AND logical comparison rule
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 class AndLogic extends Logical
 {

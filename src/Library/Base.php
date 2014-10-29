@@ -17,7 +17,7 @@ use RuntimeException;
 /**
  * Holds a set of class names to be able to instantiate them
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 abstract class Base implements Library
 {

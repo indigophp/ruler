@@ -14,7 +14,7 @@ namespace Indigo\Ruler\Library;
 /**
  * Library for Rules
  *
- * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
+ * @author Steve West
  */
 class Rule extends Base
 {
