@@ -11,6 +11,8 @@
 
 namespace Indigo\Ruler;
 
+use Indigo\Ruler\Rule\Logical;
+
 /**
  * Responsible for constructing sets of rules from formatted arrays
  *
@@ -57,6 +59,70 @@ class Builder
     }
 
     /**
+     * @return Library
+     */
+    public function getRuleLibrary()
+    {
+        return $this->ruleLibrary;
+    }
+
+    /**
+     * @param Library $ruleLibrary
+     */
+    public function setRuleLibrary(Library $ruleLibrary)
+    {
+        $this->ruleLibrary = $ruleLibrary;
+    }
+
+    /**
+     * @return Library
+     */
+    public function getAssertionLibrary()
+    {
+        return $this->assertionLibrary;
+    }
+
+    /**
+     * @param Library $assertionLibrary
+     */
+    public function setAssertionLibrary(Library $assertionLibrary)
+    {
+        $this->assertionLibrary = $assertionLibrary;
+    }
+
+    /**
+     * @return Library
+     */
+    public function getResultLibrary()
+    {
+        return $this->resultLibrary;
+    }
+
+    /**
+     * @param Library $resultLibrary
+     */
+    public function setResultLibrary(Library $resultLibrary)
+    {
+        $this->resultLibrary = $resultLibrary;
+    }
+
+    /**
+     * @return Library
+     */
+    public function getModifierLibrary()
+    {
+        return $this->modifierLibrary;
+    }
+
+    /**
+     * @param Library $modifierLibrary
+     */
+    public function setModifierLibrary(Library $modifierLibrary)
+    {
+        $this->modifierLibrary = $modifierLibrary;
+    }
+
+    /**
      * Populates the given processor with the rule sets as outlined in the $data
      *
      * @param array     $data
@@ -66,16 +132,13 @@ class Builder
      */
     public function build(array $data, Processor $processor = null)
     {
-        if ($processor === null)
-        {
+        if ($processor === null) {
             $processor = new Processor;
         }
 
         // Pull out the rule sets and build each one
-        if (isset($data['rule_sets']))
-        {
-            foreach ($data['rule_sets'] as $set)
-            {
+        if (isset($data['rule_sets'])) {
+            foreach ($data['rule_sets'] as $set) {
                 $processor->addRuleSet($this->buildRuleSet($set));
             }
         }
@@ -116,27 +179,28 @@ class Builder
     /**
      * Builds a rule
      *
-     * Expects an array with a key called "name". If "assertion" is set the $data array will be passed to `buildAssertion`
+     * Expects an array with a key called "name".
+     * If "assertion" is set the $data array will be passed to `buildAssertion`
      * and the resulting modifier will be added to the rule.
      *
      * @param array $data
      *
-     * @return AbstractRule
+     * @return Rule
      */
-    public function buildRule($data)
+    public function buildRule(array $data)
     {
         // Extract the name and create an instance
-        /** @type AbstractRule $rule */
+        /** @type Rule $rule */
         $rule = $this->ruleLibrary->getInstance($data['name']);
 
         // If the rule is a logical rule then make sure the left and right have been added
-        if ($rule instanceof AbstractLogicRule) {
+        if ($rule instanceof Logical) {
             $this->populateLogicRule($rule, $data);
         }
 
         // Build the assertion and set its value before adding it to the rule
         if (isset($data['assertion'])) {
-            $rule->setAssertion($this->buildAssertion($data));
+            $rule->setAssertion($this->buildAssertion($data['assertion']));
         }
 
         return $rule;
@@ -145,10 +209,10 @@ class Builder
     /**
      * Sets up the left and right rules of a logic rule.
      *
-     * @param AbstractLogicRule $rule
-     * @param array             $data
+     * @param Logical $rule
+     * @param array   $data
      */
-    protected function populateLogicRule(AbstractLogicRule $rule, $data)
+    protected function populateLogicRule(Logical $rule, array $data)
     {
         if (isset($data['left'])) {
             $rule->setLeft($this->buildRule($data['left']));
@@ -160,18 +224,60 @@ class Builder
     }
 
     /**
-     * Builds a modifier.
+     * Builds an assertion
      *
-     * Expects an array with a "assertion" key with the name of the modifier and an optional "value" that will be passed
-     * as the modifier target value if set.
+     * Expects an array with a "name" key with the name of the assertion
+     * and an optional "value" that will be passed
+     * as the assertion target value if set.
+     *
+     * Note: you can only use "value" if you used TargetValue
      *
      * @param array $data
      *
-     * @return AbstractAssertion
+     * @return Assertion
      */
-    public function buildAssertion($data)
+    public function buildAssertion(array $data)
     {
-        $modifier = $this->assertionLibrary->getInstance($data['assertion']);
+        $assertion = $this->assertionLibrary->getInstance($data['name']);
+
+        if (isset($data['value'])) {
+            $assertion->setTargetValue($data['value']);
+        }
+
+        return $assertion;
+    }
+
+    /**
+     * Builds a result, expects a key called "name" to exist in the $data array
+     * that represents a known result.
+     *
+     * @param array $data
+     *
+     * @return Result
+     */
+    public function buildResult(array $data)
+    {
+        // Get the name and try to create an instance from the library
+        /** @var Result $result */
+        $result = $this->resultLibrary->getInstance($data['name']);
+
+        if (isset($data['modifier'])) {
+            $result->setModifier($this->buildModifier($data['modifier']));
+        }
+
+        return $result;
+    }
+
+    /**
+     * Builds a modifier, expects a key called "name" to exist in the $data array
+     *
+     * @param array $data
+     *
+     * @return Modifier
+     */
+    public function buildModifier(array $data)
+    {
+        $modifier = $this->modifierLibrary->getInstance($data['name']);
 
         if (isset($data['value'])) {
             $modifier->setTargetValue($data['value']);
@@ -179,111 +285,4 @@ class Builder
 
         return $modifier;
     }
-
-    /**
-     * Builds a result, expects a key called "name" to exist in the $data array that represents a known result.
-     *
-     * @param array $data
-     *
-     * @return AbstractResult
-     */
-    public function buildResult($data)
-    {
-        // Get the name and try to create an instance from the library
-        /** @var AbstractResult $result */
-        $result = $this->resultLibrary->getInstance($data['name']);
-
-        if (isset($data['value'])) {
-            $result->setValue($data['value']);
-        }
-
-        if (isset($data['modifier'])) {
-            $result->setModifier($this->buildModifier($data));
-        }
-
-        return $result;
-    }
-
-    /**
-     * Creates a rule modifier. Expects a key called "modifier" to exist in the $data array.
-     *
-     * @param array $data
-     *
-     * @return AbstractModifier
-     */
-    public function buildModifier($data)
-    {
-        $modifier = $this->modifierLibrary->getInstance($data['modifier']);
-
-        if (isset($data['target'])) {
-            $modifier->setTargetValue($data['target']);
-        }
-
-        return $modifier;
-    }
-
-    /**
-     * @return Library
-     */
-    public function getModifierLibrary()
-    {
-        return $this->modifierLibrary;
-    }
-
-    /**
-     * @param Library $modifierLibrary
-     */
-    public function setModifierLibrary(Library $modifierLibrary)
-    {
-        $this->modifierLibrary = $modifierLibrary;
-    }
-
-    /**
-     * @return Library
-     */
-    public function getResultLibrary()
-    {
-        return $this->resultLibrary;
-    }
-
-    /**
-     * @param Library $resultLibrary
-     */
-    public function setResultLibrary(Library $resultLibrary)
-    {
-        $this->resultLibrary = $resultLibrary;
-    }
-
-    /**
-     * @return Library
-     */
-    public function getAssertionLibrary()
-    {
-        return $this->assertionLibrary;
-    }
-
-    /**
-     * @param Library $assertionLibrary
-     */
-    public function setAssertionLibrary(Library $assertionLibrary)
-    {
-        $this->assertionLibrary = $assertionLibrary;
-    }
-
-    /**
-     * @return Library
-     */
-    public function getRuleLibrary()
-    {
-        return $this->ruleLibrary;
-    }
-
-    /**
-     * @param Library $ruleLibrary
-     */
-    public function setRuleLibrary(Library $ruleLibrary)
-    {
-        $this->ruleLibrary = $ruleLibrary;
-    }
-
 }

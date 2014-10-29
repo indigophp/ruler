@@ -82,7 +82,7 @@ class RuleSet
      *
      * @param mixed $context
      *
-     * @return bool
+     * @return boolean
      */
     public function isValid($context)
     {
@@ -93,12 +93,14 @@ class RuleSet
      * Applies the results for this rule to the target.
      *
      * @param mixed $target
+     *
+     * @codeCoverageIgnore
      */
     public function applyResults(&$target)
     {
-        foreach ($this->results as $mutator)
+        foreach ($this->results as $result)
         {
-            $mutator->mutate($target);
+            $result->mutate($target);
         }
     }
 }
