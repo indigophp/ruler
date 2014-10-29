@@ -1,11 +1,11 @@
 # Indigo Ruler
 
-[![Latest Version](https://img.shields.io/github/release/indigo/ruler.svg?style=flat-square)](https://github.com/indigo/ruler/releases)
+[![Latest Version](https://img.shields.io/github/release/indigophp/ruler.svg?style=flat-square)](https://github.com/indigophp/ruler/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/indigophp/ruler/develop.svg?style=flat-square)](https://travis-ci.org/indigophp/ruler)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/indigophp/ruler.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/ruler)
 [![Quality Score](https://img.shields.io/scrutinizer/g/indigophp/ruler.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/ruler)
-[![HHVM Status](https://img.shields.io/hhvm/indigophp/ruler.svg?style=flat-square)](http://hhvm.h4cc.de/package/indigo/ruler)
+[![HHVM Status](https://img.shields.io/hhvm/indigophp/ruler.svg?style=flat-square)](http://hhvm.h4cc.de/package/indigophp/ruler)
 [![Total Downloads](https://img.shields.io/packagist/dt/indigophp/ruler.svg?style=flat-square)](https://packagist.org/packages/indigophp/ruler)
 
 **Library to process logical rules and apply outcomes based on the result of those rules.**
