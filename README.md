@@ -52,9 +52,7 @@ rules. The `Rule`s and `Result`s allow a user to pinpoint a single piece of data
 
 The `Builder` class can be used to create sets of rules quickly from an array structure. This first requires setting up the various libraries so the `Builder` can create the needed classes for you.
 
-The format of the array is represented in the JSON object below.
-
-https://github.com/ve-interactive/ruler/wiki/JSON-data-structure
+The format of the array is represented [here](resources/builder.json).
 
 
 ### Manager

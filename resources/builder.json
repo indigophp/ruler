@@ -1,0 +1,40 @@
+{
+    "i18n": {
+        "en": {
+            "name": "My awesome rules"
+        }
+    },
+    "rule_sets": [
+        {
+            "identifier": "Some internal identifier to identify this set of rules",
+            "rule": [
+                {
+                    "name": "andLogic",
+                    "left": {
+                        "name": "rule_name",
+                        "assertion": {
+                            "name": "greaterEqual",
+                            "value": 123
+                        }
+                    },
+                    "right": {
+                        "name": "other_rule",
+                        "assertion": {
+                            "name": "lessEqual",
+                            "value": 123
+                        }
+                    }
+                }
+            ],
+            "result": [
+                {
+                    "name": "promotion",
+                    "modifier": {
+                        "name": "percent",
+                        "value": 80
+                    },
+                }
+            ]
+        }
+    ]
+}
