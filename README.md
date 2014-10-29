@@ -39,7 +39,7 @@ A `Result` should modify data within the `Target`. They work in much the same wa
 
 [Processor Flow](resources/processor_flow.svg)
 
-[Sample code](https://github.com/ve-interactive/ruler/wiki/Sample-test-code)
+[Sample code](resources/example.php)
 
 
 ### Why is this all so complicated
