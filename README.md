@@ -84,10 +84,11 @@ Please see [CONTRIBUTING](https://github.com/indigophp/ruler/blob/develop/CONTRI
 
 ## Credits
 
+- [Steve West](https://github.com/stevewest)
 - [Márk Sági-Kazár](https://github.com/sagikazarmark)
 - [All Contributors](https://github.com/indigophp/ruler/contributors)
 
-Based on the work of [Steve West](https://github.com/stevewest) (original name: [LogicProcessor](https://github.com/ve/logicprocessor)), originally licensed by [Ve Interactive](http://www.veinteractive.com/) under the MIT License.
+Based on the work of [Steve West](https://github.com/stevewest) (original name: [LogicProcessor](https://github.com/ve-interactive/logicprocessor)), originally licensed by [Ve Interactive](http://www.veinteractive.com/) under the MIT License.
 
 
 ## License
