@@ -9,7 +9,7 @@
             "identifier": "Some internal identifier to identify this set of rules",
             "rule": [
                 {
-                    "name": "andLogic",
+                    "name": "logicalAnd",
                     "left": {
                         "name": "rule_name",
                         "assertion": {

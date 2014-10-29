@@ -12,17 +12,17 @@
 namespace Indigo\Ruler\Rule;
 
 /**
- * OR logical comparison rule
+ * AND logical comparison rule
  *
  * @author Steve West
  */
-class OrLogic extends Logical
+class LogicalAnd extends Logical
 {
-	/**
-	 * {@inheritdoc}
-	 */
-	public function check($context)
-	{
-		return $this->left->check($context) || $this->right->check($context);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function check($context)
+    {
+        return $this->left->check($context) && $this->right->check($context);
+    }
 }
