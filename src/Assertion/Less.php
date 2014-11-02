@@ -12,13 +12,14 @@
 namespace Indigo\Ruler\Assertion;
 
 use Indigo\Ruler\Assertion;
+use Indigo\Ruler\HasTargetValue;
 
 /**
  * Asserts that a value is less than another
  *
  * @author Steve West
  */
-final class Less implements Assertion
+final class Less implements Assertion, HasTargetValue
 {
     use \Indigo\Ruler\TargetValue;
 

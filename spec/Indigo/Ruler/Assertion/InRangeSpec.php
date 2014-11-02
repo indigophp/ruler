@@ -15,6 +15,7 @@ class InRangeSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Indigo\Ruler\Assertion\InRange');
         $this->shouldHaveType('Indigo\Ruler\Assertion');
+        $this->shouldImplement('Indigo\Ruler\HasTargetValue');
     }
 
     public function it_should_allow_to_be_in_range()

@@ -15,6 +15,7 @@ class DecreaseSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Indigo\Ruler\Modifier\Decrease');
         $this->shouldImplement('Indigo\Ruler\Modifier');
+        $this->shouldImplement('Indigo\Ruler\HasTargetValue');
     }
 
     function it_should_allow_to_decrease()

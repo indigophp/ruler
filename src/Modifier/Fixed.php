@@ -12,13 +12,14 @@
 namespace Indigo\Ruler\Modifier;
 
 use Indigo\Ruler\Modifier;
+use Indigo\Ruler\HasTargetValue;
 
 /**
  * Returns a fixed value
  *
  * @author Steve West
  */
-final class Fixed implements Modifier
+final class Fixed implements Modifier, HasTargetValue
 {
     use \Indigo\Ruler\TargetValue;
 

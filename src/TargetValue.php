@@ -14,6 +14,8 @@ namespace Indigo\Ruler;
 /**
  * Helps to handle target value on assertions and modifiers
  *
+ * Classes using this trait should implement HasTargetValue
+ *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
 trait TargetValue
@@ -32,7 +34,7 @@ trait TargetValue
     }
 
     /**
-     * @return mixed
+     * {@inheritdoc}
      */
     public function getTargetValue()
     {
@@ -40,10 +42,10 @@ trait TargetValue
     }
 
     /**
-     * @param mixed $value
+     * {@inheritdoc}
      */
-    public function setTargetValue($value)
+    public function setTargetValue($targetValue)
     {
-        $this->targetValue = $value;
+        $this->targetValue = $targetValue;
     }
 }

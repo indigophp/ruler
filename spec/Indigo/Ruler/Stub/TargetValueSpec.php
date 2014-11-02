@@ -10,6 +10,7 @@ class TargetValueSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Indigo\Ruler\Stub\TargetValue');
         $this->shouldUseTrait('Indigo\Ruler\TargetValue');
+        $this->shouldImplement('Indigo\Ruler\HasTargetValue');
     }
 
     function it_should_allow_to_construct_with_value()

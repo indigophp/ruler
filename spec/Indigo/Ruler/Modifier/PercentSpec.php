@@ -10,6 +10,7 @@ class PercentSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Indigo\Ruler\Modifier\Percent');
         $this->shouldImplement('Indigo\Ruler\Modifier');
+        $this->shouldImplement('Indigo\Ruler\HasTargetValue');
     }
 
     function it_should_allow_to_decrease_percent()

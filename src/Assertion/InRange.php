@@ -12,6 +12,7 @@
 namespace Indigo\Ruler\Assertion;
 
 use Indigo\Ruler\Assertion;
+use Indigo\Ruler\HasTargetValue;
 
 /**
  * Asserts that a value is within a range defined by the target value.
@@ -20,7 +21,7 @@ use Indigo\Ruler\Assertion;
  *
  * @author Steve West
  */
-final class InRange implements Assertion
+final class InRange implements Assertion, HasTargetValue
 {
     use \Indigo\Ruler\TargetValue;
 

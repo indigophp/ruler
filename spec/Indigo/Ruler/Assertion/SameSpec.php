@@ -16,6 +16,7 @@ class SameSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Indigo\Ruler\Assertion\Same');
         $this->shouldImplement('Indigo\Ruler\Assertion');
+        $this->shouldImplement('Indigo\Ruler\HasTargetValue');
     }
 
     function it_should_allow_to_be_the_same(stdClass $targetValue)
