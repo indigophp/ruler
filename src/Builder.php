@@ -200,8 +200,10 @@ class Builder
 
         // Build the assertion and set its value before adding it to the rule
         if (isset($data['assertion'])) {
-            $rule->setAssertion($this->buildAssertion($data['assertion']));
+            $this->setAssertion($this->buildAssertion($data['assertion']), $rule);
         }
+
+        $this->tryValue($data, $rule);
 
         return $rule;
     }
@@ -240,9 +242,7 @@ class Builder
     {
         $assertion = $this->assertionLibrary->getInstance($data['name']);
 
-        if (isset($data['value'])) {
-            $assertion->setTargetValue($data['value']);
-        }
+        $this->tryValue($data, $assertion);
 
         return $assertion;
     }
@@ -262,8 +262,10 @@ class Builder
         $result = $this->resultLibrary->getInstance($data['name']);
 
         if (isset($data['modifier'])) {
-            $result->setModifier($this->buildModifier($data['modifier']));
+            $this->setModifier($this->buildModifier($data['modifier']), $result);
         }
+
+        $this->tryValue($data, $result);
 
         return $result;
     }
@@ -279,10 +281,54 @@ class Builder
     {
         $modifier = $this->modifierLibrary->getInstance($data['name']);
 
-        if (isset($data['value'])) {
-            $modifier->setTargetValue($data['value']);
-        }
+        $this->tryValue($data, $modifier);
 
         return $modifier;
+    }
+
+    /**
+     * Tries to set a value from data
+     *
+     * @param array $data
+     * @param mixed $object
+     */
+    private function tryValue(array $data, $object)
+    {
+        if (isset($data['value'])) {
+            $this->setTargetValue($data['value'], $object);
+        }
+    }
+
+    /**
+     * Makes sure that the object HasTargetValue
+     *
+     * @param mixed         $value
+     * @param HasTargetValue $object
+     */
+    private function setTargetValue($value, HasTargetValue $object)
+    {
+        $object->setTargetValue($value);
+    }
+
+    /**
+     * Sets an assertion on an object which HasAssertion
+     *
+     * @param Assertion    $assertion
+     * @param HasAssertion $object
+     */
+    private function setAssertion(Assertion $assertion, HasAssertion $object)
+    {
+        $object->setAssertion($assertion);
+    }
+
+    /**
+     * Sets a modifier on an object which HasModifier
+     *
+     * @param Modifier    $modifier
+     * @param HasModifier $object
+     */
+    private function setModifier(Modifier $modifier, HasModifier $object)
+    {
+        $object->setModifier($modifier);
     }
 }
