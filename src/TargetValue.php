@@ -12,7 +12,7 @@
 namespace Indigo\Ruler;
 
 /**
- * Helps to handle target value on assertions and modifiers
+ * Helps to handle target value
  *
  * Classes using this trait should implement HasTargetValue
  *

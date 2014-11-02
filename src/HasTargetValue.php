@@ -12,7 +12,7 @@
 namespace Indigo\Ruler;
 
 /**
- * Helps to handle target value on assertions and modifiers
+ * Helps to handle target value
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
