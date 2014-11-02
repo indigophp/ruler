@@ -12,30 +12,23 @@
 namespace Indigo\Ruler;
 
 /**
- * Defines an ModifierAware helper
+ * Helps to decide whether a Result has a modifier or not
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-trait ModifierAware
+interface HasModifier
 {
     /**
-     * @var Modifier
+     * Returns the Modifier
+     *
+     * @return Modifier
      */
-    protected $modifier;
+    public function getModifier();
 
     /**
-     * {@inheritdoc}
+     * Sets the Modifier
+     *
+     * @param Modifier $modifier
      */
-    public function getModifier()
-    {
-        return $this->modifier;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setModifier(Modifier $modifier)
-    {
-        $this->modifier = $modifier;
-    }
+    public function setModifier(Modifier $modifier);
 }

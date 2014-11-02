@@ -3,6 +3,8 @@
 use Indigo\Ruler\Rule;
 use Indigo\Ruler\HasAssertion;
 use Indigo\Ruler\Result;
+use Indigo\Ruler\HasModifier;
+use Indigo\Ruler\HasTargetValue;
 use Indigo\Ruler\Assertion\Equal;
 use Indigo\Ruler\Modifier\Percent;
 use Indigo\Ruler\Processor;
@@ -30,7 +32,7 @@ class HasProduct implements Rule, HasAssertion
     }
 }
 
-class ProductDiscount implements Result
+class ProductDiscount implements Result, HasModifier, HasTargetValue
 {
     use \Indigo\Ruler\TargetValue;
     use \Indigo\Ruler\ModifierAware;

@@ -11,12 +11,14 @@
 
 namespace Indigo\Ruler\Stub;
 
+use Indigo\Ruler\HasModifier;
+
 /**
  * ModifierAware Stub
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class ModifierAware
+class ModifierAware implements HasModifier
 {
     use \Indigo\Ruler\ModifierAware;
 }
