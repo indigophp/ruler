@@ -1,6 +1,7 @@
 <?php
 
 use Indigo\Ruler\Rule;
+use Indigo\Ruler\HasAssertion;
 use Indigo\Ruler\Result;
 use Indigo\Ruler\Assertion\Equal;
 use Indigo\Ruler\Modifier\Percent;
@@ -9,7 +10,7 @@ use Indigo\Ruler\RuleSet;
 
 require __DIR__.'/../vendor/autoload.php';
 
-class HasProduct implements Rule
+class HasProduct implements Rule, HasAssertion
 {
     use \Indigo\Ruler\AssertionAware;
 

@@ -11,12 +11,14 @@
 
 namespace Indigo\Ruler\Stub;
 
+use Indigo\Ruler\HasAssertion;
+
 /**
  * AssertionAware Stub
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class AssertionAware
+class AssertionAware implements HasAssertion
 {
     use \Indigo\Ruler\AssertionAware;
 }

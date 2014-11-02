@@ -14,6 +14,8 @@ namespace Indigo\Ruler;
 /**
  * Defines an AssertionAware helper
  *
+ * Classes using this trait should implement HasAssertion
+ *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
 trait AssertionAware
@@ -24,9 +26,7 @@ trait AssertionAware
     protected $assertion;
 
     /**
-     * Returns the Assertion
-     *
-     * @return Assertion
+     * {@inheritdoc}
      */
     public function getAssertion()
     {
@@ -34,9 +34,7 @@ trait AssertionAware
     }
 
     /**
-     * Sets the Assertion
-     *
-     * @param Assertion $assertion
+     * {@inheritdoc}
      */
     public function setAssertion(Assertion $assertion)
     {

@@ -11,6 +11,7 @@ class AssertionAwareSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Indigo\Ruler\Stub\AssertionAware');
         $this->shouldUseTrait('Indigo\Ruler\AssertionAware');
+        $this->shouldImplement('Indigo\Ruler\HasAssertion');
     }
 
     function it_should_allow_to_set_assertion(Assertion $assertion)
