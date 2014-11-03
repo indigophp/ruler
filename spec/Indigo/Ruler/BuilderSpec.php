@@ -97,7 +97,7 @@ class BuilderSpec extends ObjectBehavior
     function it_should_allow_to_build_a_rule(
         Library $ruleLibrary,
         Library $assertionLibrary,
-        Logical $rule,
+        Rule $rule,
         Rule $left,
         Rule $right,
         Assertion $assertion
@@ -109,16 +109,23 @@ class BuilderSpec extends ObjectBehavior
                 'assertion' => ['name' => 'test'],
             ],
             'right' => ['name' => 'right'],
+            'parameter' => 1,
         ];
 
+        $left->implement('Indigo\Ruler\Builder\HasAssertion');
         $left->beADoubleOf('Indigo\Ruler\Stub\Builder\AssertionAware');
-
-        $rule->setLeft($left)->shouldBeCalled();
-        $rule->setRight($right)->shouldBeCalled();
 
         $left->setAssertion(Argument::type('Indigo\Ruler\Assertion'))->will(function($args) use($left) {
             $left->getAssertion()->willReturn($args[0]);
         });
+
+        $rule->implement('Indigo\Ruler\Builder\HasParameter');
+        $rule->beADoubleOf('Indigo\Ruler\Stub\Builder\ParameterAware');
+        $rule->beADoubleOf('Indigo\Ruler\Rule\Logical');
+        $rule->setLeft($left)->shouldBeCalled();
+        $rule->setRight($right)->shouldBeCalled();
+
+        $rule->setParameter(1)->shouldBeCalled();
 
         $ruleLibrary->getInstance('test')->willReturn($rule);
         $ruleLibrary->getInstance('left')->willReturn($left);
@@ -143,6 +150,7 @@ class BuilderSpec extends ObjectBehavior
             'value' => 1,
         ];
 
+        $assertion->implement('Indigo\Ruler\Builder\HasTargetValue');
         $assertion->beADoubleOf('Indigo\Ruler\Stub\Builder\TargetValueAware');
 
         $assertionLibrary->getInstance('test')->willReturn($assertion);
@@ -163,9 +171,17 @@ class BuilderSpec extends ObjectBehavior
         $data = [
             'name' => 'test',
             'modifier' => ['name' => 'test'],
+            'parameter' => 1,
         ];
 
+        $result->implement('Indigo\Ruler\Builder\HasModifier');
         $result->beADoubleOf('Indigo\Ruler\Stub\Builder\ModifierAware');
+        $result->implement('Indigo\Ruler\Builder\HasParameter');
+        $result->beADoubleOf('Indigo\Ruler\Stub\Builder\ParameterAware');
+        $result->setParameter(1)->shouldBeCalled();
+        $result->setModifier(Argument::type('Indigo\Ruler\Modifier'))->will(function($args) use($result) {
+            $result->getModifier()->willReturn($args[0]);
+        })->shouldBeCalled();
 
         $resultLibrary->getInstance('test')->willReturn($result);
 
@@ -188,6 +204,7 @@ class BuilderSpec extends ObjectBehavior
             'value' => 1,
         ];
 
+        $modifier->implement('Indigo\Ruler\Builder\HasTargetValue');
         $modifier->beADoubleOf('Indigo\Ruler\Stub\Builder\TargetValueAware');
 
         $modifierLibrary->getInstance('test')->willReturn($modifier);

@@ -207,7 +207,9 @@ class Builder
             $this->setAssertion($this->buildAssertion($data['assertion']), $rule);
         }
 
-        $this->tryValue($data, $rule);
+        if (isset($data['parameter'])) {
+            $this->setParameter($data['parameter'], $rule);
+        }
 
         return $rule;
     }
@@ -246,7 +248,9 @@ class Builder
     {
         $assertion = $this->assertionLibrary->getInstance($data['name']);
 
-        $this->tryValue($data, $assertion);
+        if (isset($data['value'])) {
+            $this->setTargetValue($data['value'], $assertion);
+        }
 
         return $assertion;
     }
@@ -269,7 +273,9 @@ class Builder
             $this->setModifier($this->buildModifier($data['modifier']), $result);
         }
 
-        $this->tryValue($data, $result);
+        if (isset($data['parameter'])) {
+            $this->setParameter($data['parameter'], $result);
+        }
 
         return $result;
     }
@@ -285,28 +291,28 @@ class Builder
     {
         $modifier = $this->modifierLibrary->getInstance($data['name']);
 
-        $this->tryValue($data, $modifier);
+        if (isset($data['value'])) {
+            $this->setTargetValue($data['value'], $modifier);
+        }
 
         return $modifier;
     }
 
     /**
-     * Tries to set a value from data
+     * Makes sure that the object HasParameter
      *
-     * @param array $data
-     * @param mixed $object
+     * @param mixed         $value
+     * @param HasParameter  $object
      */
-    private function tryValue(array $data, $object)
+    private function setParameter($value, HasParameter $object)
     {
-        if (isset($data['value'])) {
-            $this->setTargetValue($data['value'], $object);
-        }
+        $object->setParameter($value);
     }
 
     /**
      * Makes sure that the object HasTargetValue
      *
-     * @param mixed         $value
+     * @param mixed          $value
      * @param HasTargetValue $object
      */
     private function setTargetValue($value, HasTargetValue $object)
