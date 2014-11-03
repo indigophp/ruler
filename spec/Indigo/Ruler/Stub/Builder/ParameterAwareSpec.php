@@ -4,7 +4,7 @@ namespace spec\Indigo\Ruler\Stub\Builder;
 
 use PhpSpec\ObjectBehavior;
 
-class ParameterSpec extends ObjectBehavior
+class ParameterAwareSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
