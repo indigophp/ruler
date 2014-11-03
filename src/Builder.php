@@ -16,6 +16,7 @@ use Indigo\Ruler\Builder\HasAssertion;
 use Indigo\Ruler\Builder\HasModifier;
 use Indigo\Ruler\Builder\HasTargetValue;
 use Indigo\Ruler\Builder\HasParameter;
+use RuntimeException;
 
 /**
  * Responsible for constructing sets of rules from formatted arrays
@@ -204,11 +205,11 @@ class Builder
 
         // Build the assertion and set its value before adding it to the rule
         if (isset($data['assertion'])) {
-            $this->setAssertion($this->buildAssertion($data['assertion']), $rule);
+            $rule->setAssertion($this->buildAssertion($data['assertion']));
         }
 
         if (isset($data['parameter'])) {
-            $this->setParameter($data['parameter'], $rule);
+            $rule->setParameter($data['parameter']);
         }
 
         return $rule;
@@ -249,7 +250,7 @@ class Builder
         $assertion = $this->assertionLibrary->getInstance($data['name']);
 
         if (isset($data['value'])) {
-            $this->setTargetValue($data['value'], $assertion);
+            $assertion->setTargetValue($data['value']);
         }
 
         return $assertion;
@@ -262,6 +263,8 @@ class Builder
      * @param array $data
      *
      * @return Result
+     *
+     * @throws RuntimeException If a modifier is defined but result does not accept that
      */
     public function buildResult(array $data)
     {
@@ -270,11 +273,11 @@ class Builder
         $result = $this->resultLibrary->getInstance($data['name']);
 
         if (isset($data['modifier'])) {
-            $this->setModifier($this->buildModifier($data['modifier']), $result);
+            $result->setModifier($this->buildModifier($data['modifier']));
         }
 
         if (isset($data['parameter'])) {
-            $this->setParameter($data['parameter'], $result);
+            $result->setParameter($data['parameter']);
         }
 
         return $result;
@@ -292,53 +295,9 @@ class Builder
         $modifier = $this->modifierLibrary->getInstance($data['name']);
 
         if (isset($data['value'])) {
-            $this->setTargetValue($data['value'], $modifier);
+            $modifier->setTargetValue($data['value']);
         }
 
         return $modifier;
-    }
-
-    /**
-     * Makes sure that the object HasParameter
-     *
-     * @param mixed         $value
-     * @param HasParameter  $object
-     */
-    private function setParameter($value, HasParameter $object)
-    {
-        $object->setParameter($value);
-    }
-
-    /**
-     * Makes sure that the object HasTargetValue
-     *
-     * @param mixed          $value
-     * @param HasTargetValue $object
-     */
-    private function setTargetValue($value, HasTargetValue $object)
-    {
-        $object->setTargetValue($value);
-    }
-
-    /**
-     * Sets an assertion on an object which HasAssertion
-     *
-     * @param Assertion    $assertion
-     * @param HasAssertion $object
-     */
-    private function setAssertion(Assertion $assertion, HasAssertion $object)
-    {
-        $object->setAssertion($assertion);
-    }
-
-    /**
-     * Sets a modifier on an object which HasModifier
-     *
-     * @param Modifier    $modifier
-     * @param HasModifier $object
-     */
-    private function setModifier(Modifier $modifier, HasModifier $object)
-    {
-        $object->setModifier($modifier);
     }
 }
