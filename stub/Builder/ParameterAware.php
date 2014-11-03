@@ -9,22 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler;
+namespace Indigo\Ruler\Stub\Builder;
+
+use Indigo\Ruler\Builder\HasParameter;
 
 /**
- * Helps to handle target value
+ * ParameterAware Stub
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-interface HasTargetValue
+class ParameterAware implements HasParameter
 {
-    /**
-     * @return mixed
-     */
-    public function getTargetValue();
-
-    /**
-     * @param mixed $value
-     */
-    public function setTargetValue($targetValue);
+    use \Indigo\Ruler\Builder\ParameterAware;
 }

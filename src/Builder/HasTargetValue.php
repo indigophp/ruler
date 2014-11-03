@@ -9,26 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler;
+namespace Indigo\Ruler\Builder;
 
 /**
- * Helps to decide whether a Rule has an assertion or not
+ * Helps to handle target value
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-interface HasAssertion
+interface HasTargetValue
 {
     /**
-     * Returns the Assertion
-     *
-     * @return Assertion
+     * @return mixed
      */
-    public function getAssertion();
+    public function getTargetValue();
 
     /**
-     * Sets the Assertion
-     *
-     * @param Assertion $assertion
+     * @param mixed $targetValue
      */
-    public function setAssertion(Assertion $assertion);
+    public function setTargetValue($targetValue);
 }

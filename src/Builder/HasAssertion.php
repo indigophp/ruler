@@ -9,26 +9,28 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler;
+namespace Indigo\Ruler\Builder;
+
+use Indigo\Ruler\Assertion;
 
 /**
- * Helps to decide whether a Result has a modifier or not
+ * Helps to decide whether a Rule has an assertion or not
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-interface HasModifier
+interface HasAssertion
 {
     /**
-     * Returns the Modifier
+     * Returns the Assertion
      *
-     * @return Modifier
+     * @return Assertion
      */
-    public function getModifier();
+    public function getAssertion();
 
     /**
-     * Sets the Modifier
+     * Sets the Assertion
      *
-     * @param Modifier $modifier
+     * @param Assertion $assertion
      */
-    public function setModifier(Modifier $modifier);
+    public function setAssertion(Assertion $assertion);
 }

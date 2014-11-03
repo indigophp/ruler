@@ -9,10 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler;
+namespace Indigo\Ruler\Builder;
+
+use Indigo\Ruler\Assertion;
 
 /**
- * Defines an AssertionAware helper
+ * Helps to create classes which has assertion
  *
  * Classes using this trait should implement HasAssertion
  *

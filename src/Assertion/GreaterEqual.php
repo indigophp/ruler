@@ -12,7 +12,7 @@
 namespace Indigo\Ruler\Assertion;
 
 use Indigo\Ruler\Assertion;
-use Indigo\Ruler\HasTargetValue;
+use Indigo\Ruler\Builder\HasTargetValue;
 
 /**
  * Asserts that a value is greater than or equal to another
@@ -21,7 +21,7 @@ use Indigo\Ruler\HasTargetValue;
  */
 final class GreaterEqual implements Assertion, HasTargetValue
 {
-    use \Indigo\Ruler\TargetValue;
+    use \Indigo\Ruler\Builder\TargetValueAware;
 
     /**
      * {@inheritdoc}

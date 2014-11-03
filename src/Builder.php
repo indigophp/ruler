@@ -12,6 +12,10 @@
 namespace Indigo\Ruler;
 
 use Indigo\Ruler\Rule\Logical;
+use Indigo\Ruler\Builder\HasAssertion;
+use Indigo\Ruler\Builder\HasModifier;
+use Indigo\Ruler\Builder\HasTargetValue;
+use Indigo\Ruler\Builder\HasParameter;
 
 /**
  * Responsible for constructing sets of rules from formatted arrays

@@ -12,7 +12,7 @@
 namespace Indigo\Ruler\Modifier;
 
 use Indigo\Ruler\Modifier;
-use Indigo\Ruler\HasTargetValue;
+use Indigo\Ruler\Builder\HasTargetValue;
 
 /**
  * Returns a decreased value by a percentage
@@ -21,7 +21,7 @@ use Indigo\Ruler\HasTargetValue;
  */
 final class Discount implements Modifier, HasTargetValue
 {
-    use \Indigo\Ruler\TargetValue;
+    use \Indigo\Ruler\Builder\TargetValueAware;
 
     /**
      * {@inheritdoc}

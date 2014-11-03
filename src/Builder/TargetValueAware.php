@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler;
+namespace Indigo\Ruler\Builder;
 
 /**
- * Helps to handle target value
+ * Helps to create classes which has target value
  *
  * Classes using this trait should implement HasTargetValue
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-trait TargetValue
+trait TargetValueAware
 {
     /**
      * @var mixed

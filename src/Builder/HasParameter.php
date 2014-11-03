@@ -9,16 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler\Stub;
-
-use Indigo\Ruler\HasAssertion;
+namespace Indigo\Ruler\Builder;
 
 /**
- * AssertionAware Stub
+ * Helps to handle parameter
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class AssertionAware implements HasAssertion
+interface HasParameter
 {
-    use \Indigo\Ruler\AssertionAware;
+    /**
+     * @return mixed
+     */
+    public function getParameter();
+
+    /**
+     * @param mixed $parameter
+     */
+    public function setParameter($parameter);
 }

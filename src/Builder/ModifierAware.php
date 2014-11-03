@@ -9,10 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler;
+namespace Indigo\Ruler\Builder;
+
+use Indigo\Ruler\Modifier;
 
 /**
- * Defines an ModifierAware helper
+ * Helps to create classes which has modifier
+ *
+ * Classes using this trait should implement HasModifier
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */

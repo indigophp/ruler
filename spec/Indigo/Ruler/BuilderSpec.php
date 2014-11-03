@@ -111,7 +111,7 @@ class BuilderSpec extends ObjectBehavior
             'right' => ['name' => 'right'],
         ];
 
-        $left->beADoubleOf('Indigo\Ruler\Stub\AssertionAware');
+        $left->beADoubleOf('Indigo\Ruler\Stub\Builder\AssertionAware');
 
         $rule->setLeft($left)->shouldBeCalled();
         $rule->setRight($right)->shouldBeCalled();
@@ -143,7 +143,7 @@ class BuilderSpec extends ObjectBehavior
             'value' => 1,
         ];
 
-        $assertion->beADoubleOf('Indigo\Ruler\Stub\TargetValue');
+        $assertion->beADoubleOf('Indigo\Ruler\Stub\Builder\TargetValueAware');
 
         $assertionLibrary->getInstance('test')->willReturn($assertion);
 
@@ -165,7 +165,7 @@ class BuilderSpec extends ObjectBehavior
             'modifier' => ['name' => 'test'],
         ];
 
-        $result->beADoubleOf('Indigo\Ruler\Stub\ModifierAware');
+        $result->beADoubleOf('Indigo\Ruler\Stub\Builder\ModifierAware');
 
         $resultLibrary->getInstance('test')->willReturn($result);
 
@@ -188,7 +188,7 @@ class BuilderSpec extends ObjectBehavior
             'value' => 1,
         ];
 
-        $modifier->beADoubleOf('Indigo\Ruler\Stub\TargetValue');
+        $modifier->beADoubleOf('Indigo\Ruler\Stub\Builder\TargetValueAware');
 
         $modifierLibrary->getInstance('test')->willReturn($modifier);
 

@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler\Stub;
+namespace Indigo\Ruler\Stub\Builder;
 
-use Indigo\Ruler\HasTargetValue;
+use Indigo\Ruler\Builder\HasTargetValue;
 
 /**
- * Target Value Stub
+ * TargetValueAware Stub
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class TargetValue implements HasTargetValue
+class TargetValueAware implements HasTargetValue
 {
-    use \Indigo\Ruler\TargetValue;
+    use \Indigo\Ruler\Builder\TargetValueAware;
 }

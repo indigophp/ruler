@@ -12,7 +12,7 @@
 namespace Indigo\Ruler\Modifier;
 
 use Indigo\Ruler\Modifier;
-use Indigo\Ruler\HasTargetValue;
+use Indigo\Ruler\Builder\HasTargetValue;
 
 /**
  * Increases a value
@@ -21,7 +21,7 @@ use Indigo\Ruler\HasTargetValue;
  */
 final class Increase implements Modifier, HasTargetValue
 {
-    use \Indigo\Ruler\TargetValue;
+    use \Indigo\Ruler\Builder\TargetValueAware;
 
     /**
      * {@inheritdoc}

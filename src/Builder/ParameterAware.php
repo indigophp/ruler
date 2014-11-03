@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler;
+namespace Indigo\Ruler\Builder;
 
 /**
- * Helps to handle a parameter
+ * Helps to create classes which has parameter
  *
  * Classes using this trait should implement HasParameter
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-trait Parameter
+trait ParameterAware
 {
     /**
      * @var mixed

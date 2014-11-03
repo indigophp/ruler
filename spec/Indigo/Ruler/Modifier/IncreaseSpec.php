@@ -15,7 +15,7 @@ class IncreaseSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Indigo\Ruler\Modifier\Increase');
         $this->shouldImplement('Indigo\Ruler\Modifier');
-        $this->shouldImplement('Indigo\Ruler\HasTargetValue');
+        $this->shouldImplement('Indigo\Ruler\Builder\HasTargetValue');
     }
 
     function it_should_allow_to_increase()

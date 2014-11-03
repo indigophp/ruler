@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Indigo\Ruler\Stub;
+namespace spec\Indigo\Ruler\Stub\Builder;
 
 use Indigo\Ruler\Assertion;
 use PhpSpec\ObjectBehavior;
@@ -9,9 +9,9 @@ class AssertionAwareSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Indigo\Ruler\Stub\AssertionAware');
-        $this->shouldUseTrait('Indigo\Ruler\AssertionAware');
-        $this->shouldImplement('Indigo\Ruler\HasAssertion');
+        $this->shouldHaveType('Indigo\Ruler\Stub\Builder\AssertionAware');
+        $this->shouldUseTrait('Indigo\Ruler\Builder\AssertionAware');
+        $this->shouldImplement('Indigo\Ruler\Builder\HasAssertion');
     }
 
     function it_should_allow_to_set_assertion(Assertion $assertion)

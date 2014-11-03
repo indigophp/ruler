@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler\Stub;
+namespace Indigo\Ruler\Stub\Builder;
 
-use Indigo\Ruler\HasModifier;
+use Indigo\Ruler\Builder\HasModifier;
 
 /**
  * ModifierAware Stub
@@ -20,5 +20,5 @@ use Indigo\Ruler\HasModifier;
  */
 class ModifierAware implements HasModifier
 {
-    use \Indigo\Ruler\ModifierAware;
+    use \Indigo\Ruler\Builder\ModifierAware;
 }

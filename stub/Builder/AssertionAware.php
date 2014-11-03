@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler\Stub;
+namespace Indigo\Ruler\Stub\Builder;
 
-use Indigo\Ruler\HasParameter;
+use Indigo\Ruler\Builder\HasAssertion;
 
 /**
- * Parameter Stub
+ * AssertionAware Stub
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Parameter implements HasParameter
+class AssertionAware implements HasAssertion
 {
-    use \Indigo\Ruler\Parameter;
+    use \Indigo\Ruler\Builder\AssertionAware;
 }
