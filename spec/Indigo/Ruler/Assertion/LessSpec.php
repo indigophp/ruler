@@ -20,16 +20,16 @@ class LessSpec extends ObjectBehavior
 
     function it_should_allow_to_be_less()
     {
-        $this->assert(2)->shouldReturn(true);
+        $this->assert(0)->shouldReturn(true);
     }
 
     function it_should_not_allow_to_be_greater()
     {
-        $this->assert(0)->shouldReturn(false);
+        $this->assert(2)->shouldReturn(false);
     }
 
     function it_should_allow_to_be_less_but_different_type()
     {
-        $this->assert(2.0)->shouldReturn(true);
+        $this->assert(-1.0)->shouldReturn(true);
     }
 }

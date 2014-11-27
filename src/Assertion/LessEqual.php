@@ -28,6 +28,6 @@ final class LessEqual implements Assertion, HasTargetValue
      */
     function assert($value)
     {
-        return $this->getTargetValue() <= $value;
+        return $this->getTargetValue() >= $value;
     }
 }
