@@ -9,14 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler\Stub;
+namespace Indigo\Ruler\Builder;
 
 /**
- * Target Value Stub
+ * Helps to handle target value
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class TargetValue
+interface HasTargetValue
 {
-    use \Indigo\Ruler\TargetValue;
+    /**
+     * @return mixed
+     */
+    public function getTargetValue();
+
+    /**
+     * @param mixed $targetValue
+     */
+    public function setTargetValue($targetValue);
 }

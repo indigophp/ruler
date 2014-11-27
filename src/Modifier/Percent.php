@@ -12,15 +12,16 @@
 namespace Indigo\Ruler\Modifier;
 
 use Indigo\Ruler\Modifier;
+use Indigo\Ruler\Builder\HasTargetValue;
 
 /**
  * Returns the percentage of a value
  *
  * @author Steve West
  */
-final class Percent implements Modifier
+final class Percent implements Modifier, HasTargetValue
 {
-    use \Indigo\Ruler\TargetValue;
+    use \Indigo\Ruler\Builder\TargetValueAware;
 
     /**
      * {@inheritdoc}

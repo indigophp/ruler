@@ -12,15 +12,16 @@
 namespace Indigo\Ruler\Assertion;
 
 use Indigo\Ruler\Assertion;
+use Indigo\Ruler\Builder\HasTargetValue;
 
 /**
  * Asserts that a value is equal to another
  *
  * @author Steve West
  */
-final class Equal implements Assertion
+final class Equal implements Assertion, HasTargetValue
 {
-    use \Indigo\Ruler\TargetValue;
+    use \Indigo\Ruler\Builder\TargetValueAware;
 
     /**
      * {@inheritdoc}

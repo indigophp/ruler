@@ -9,14 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler\Stub;
+namespace Indigo\Ruler\Builder;
 
 /**
- * ModifierAware Stub
+ * Helps to handle parameter
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class ModifierAware
+interface HasParameter
 {
-    use \Indigo\Ruler\ModifierAware;
+    /**
+     * @return mixed
+     */
+    public function getParameter();
+
+    /**
+     * @param mixed $parameter
+     */
+    public function setParameter($parameter);
 }

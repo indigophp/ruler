@@ -1,7 +1,10 @@
 <?php
 
 use Indigo\Ruler\Rule;
+use Indigo\Ruler\Builder\HasAssertion;
 use Indigo\Ruler\Result;
+use Indigo\Ruler\Builder\HasModifier;
+use Indigo\Ruler\Builder\HasParameter;
 use Indigo\Ruler\Assertion\Equal;
 use Indigo\Ruler\Modifier\Percent;
 use Indigo\Ruler\Processor;
@@ -9,9 +12,9 @@ use Indigo\Ruler\RuleSet;
 
 require __DIR__.'/../vendor/autoload.php';
 
-class HasProduct implements Rule
+class HasProduct implements Rule, HasAssertion
 {
-    use \Indigo\Ruler\AssertionAware;
+    use \Indigo\Ruler\Builder\AssertionAware;
 
     /**
      * {@inheritdoc}
@@ -29,10 +32,10 @@ class HasProduct implements Rule
     }
 }
 
-class ProductDiscount implements Result
+class ProductDiscount implements Result, HasModifier, HasParameter
 {
-    use \Indigo\Ruler\TargetValue;
-    use \Indigo\Ruler\ModifierAware;
+    use \Indigo\Ruler\Builder\ModifierAware;
+    use \Indigo\Ruler\Builder\ParameterAware;
 
     /**
      * {@inheritdoc}
@@ -40,7 +43,7 @@ class ProductDiscount implements Result
     public function mutate(&$target)
     {
         foreach ($target as $id => &$product) {
-            if ($product['id'] == $this->getTargetValue()) {
+            if ($product['id'] == $this->getParameter()) {
                 $product['price'] = (int) $this->getModifier()->modify($target[$id]['price']);
                 break;
             }
@@ -64,7 +67,7 @@ $rule->setAssertion($assertion);
 
 // Set up our 50% discount
 $result = new ProductDiscount;
-$result->setTargetValue(1);
+$result->setParameter(1);
 
 $modifier = new Percent;
 $modifier->setTargetValue(50);

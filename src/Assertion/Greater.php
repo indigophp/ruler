@@ -12,15 +12,16 @@
 namespace Indigo\Ruler\Assertion;
 
 use Indigo\Ruler\Assertion;
+use Indigo\Ruler\Builder\HasTargetValue;
 
 /**
  * Asserts that a value is greater than another
  *
  * @author Steve West
  */
-final class Greater implements Assertion
+final class Greater implements Assertion, HasTargetValue
 {
-    use \Indigo\Ruler\TargetValue;
+    use \Indigo\Ruler\Builder\TargetValueAware;
 
     /**
      * {@inheritdoc}

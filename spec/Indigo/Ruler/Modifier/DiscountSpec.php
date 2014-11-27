@@ -10,6 +10,7 @@ class DiscountSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Indigo\Ruler\Modifier\Discount');
         $this->shouldImplement('Indigo\Ruler\Modifier');
+        $this->shouldImplement('Indigo\Ruler\Builder\HasTargetValue');
     }
 
     function it_should_allow_to_decrease_percent()

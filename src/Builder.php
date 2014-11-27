@@ -12,6 +12,11 @@
 namespace Indigo\Ruler;
 
 use Indigo\Ruler\Rule\Logical;
+use Indigo\Ruler\Builder\HasAssertion;
+use Indigo\Ruler\Builder\HasModifier;
+use Indigo\Ruler\Builder\HasTargetValue;
+use Indigo\Ruler\Builder\HasParameter;
+use RuntimeException;
 
 /**
  * Responsible for constructing sets of rules from formatted arrays
@@ -203,6 +208,10 @@ class Builder
             $rule->setAssertion($this->buildAssertion($data['assertion']));
         }
 
+        if (isset($data['parameter'])) {
+            $rule->setParameter($data['parameter']);
+        }
+
         return $rule;
     }
 
@@ -254,6 +263,8 @@ class Builder
      * @param array $data
      *
      * @return Result
+     *
+     * @throws RuntimeException If a modifier is defined but result does not accept that
      */
     public function buildResult(array $data)
     {
@@ -263,6 +274,10 @@ class Builder
 
         if (isset($data['modifier'])) {
             $result->setModifier($this->buildModifier($data['modifier']));
+        }
+
+        if (isset($data['parameter'])) {
+            $result->setParameter($data['parameter']);
         }
 
         return $result;

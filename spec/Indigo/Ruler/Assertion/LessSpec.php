@@ -15,6 +15,7 @@ class LessSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Indigo\Ruler\Assertion\Less');
         $this->shouldImplement('Indigo\Ruler\Assertion');
+        $this->shouldImplement('Indigo\Ruler\Builder\HasTargetValue');
     }
 
     function it_should_allow_to_be_less()

@@ -12,15 +12,16 @@
 namespace Indigo\Ruler\Modifier;
 
 use Indigo\Ruler\Modifier;
+use Indigo\Ruler\Builder\HasTargetValue;
 
 /**
  * Decreases a value
  *
  * @author Steve West
  */
-final class Decrease implements Modifier
+final class Decrease implements Modifier, HasTargetValue
 {
-    use \Indigo\Ruler\TargetValue;
+    use \Indigo\Ruler\Builder\TargetValueAware;
 
     /**
      * {@inheritdoc}

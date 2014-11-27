@@ -9,25 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Indigo\Ruler\Assertion;
+namespace Indigo\Ruler\Stub\Builder;
 
-use Indigo\Ruler\Assertion;
 use Indigo\Ruler\Builder\HasTargetValue;
 
 /**
- * Asserts that a value is less than or equal to another
+ * TargetValueAware Stub
  *
- * @author Steve West
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class LessEqual implements Assertion, HasTargetValue
+class TargetValueAware implements HasTargetValue
 {
     use \Indigo\Ruler\Builder\TargetValueAware;
-
-    /**
-     * {@inheritdoc}
-     */
-    function assert($value)
-    {
-        return $this->getTargetValue() <= $value;
-    }
 }
