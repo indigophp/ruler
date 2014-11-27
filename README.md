@@ -16,7 +16,7 @@
 Via Composer
 
 ``` bash
-composer require indigophp/ruler
+$ composer require indigophp/ruler
 ```
 
 
@@ -88,9 +88,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 - [Márk Sági-Kazár](https://github.com/sagikazarmark)
 - [All Contributors](https://github.com/indigophp/ruler/contributors)
 
-Based on the work of [Steve West](https://github.com/stevewest) (original name: [LogicProcessor](https://github.com/ve-interactive/logicprocessor)), originally licensed by [Ve Interactive](http://www.veinteractive.com/) under the MIT License.
+Based on the work of [Steve West](https://github.com/stevewest) (original name: [LogicProcessor](https://github.com/ve-interactive/logicprocessor)).
 
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
+
+Originally licensed by [Ve Interactive](http://www.veinteractive.com/) under the MIT License.
