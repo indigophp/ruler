@@ -2,9 +2,4 @@ suites:
   ruler_suite:
     namespace: Indigo\Ruler
     psr4_prefix: Indigo\Ruler
-extensions:
-  - PhpSpec\Extension\CodeCoverageExtension
 formatter.name: pretty
-code_coverage:
-  format: clover
-  output: build/coverage.xml

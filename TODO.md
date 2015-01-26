@@ -1,3 +1,0 @@
-# TODO
-
-- [ ] Rework `InRange` assertion
